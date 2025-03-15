@@ -25,14 +25,14 @@ const userSlice = createSlice({
       state.error = null;
     },
     loginFailed(state, action) {
-      state.loading = false;
-      state.isAuthenticated = false;
+      state.loading = true;
+      state.isAuthenticated = true;
       state.user = {};
       state.error = action.payload;
     },
     logoutSuccess(state, action) {
-      state.loading = false;
-      state.isAuthenticated = false;
+      state.loading = true;
+      state.isAuthenticated = true;
       state.user = {};
       state.error = null;
       state.message = action.payload;

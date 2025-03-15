@@ -14,7 +14,8 @@ const Login = () => {
   const { loading, isAuthenticated, error } = useSelector(
     (state) => state.user
   );
- 
+  console.log(
+    'loaded',{ loading, isAuthenticated, error });
   const dispatch = useDispatch();
   const navigateTo = useNavigate();
 
@@ -27,9 +28,9 @@ const Login = () => {
       toast.error(error);
       dispatch(clearAllUserErrors());
     }
-    
+    if (isAuthenticated) {
       navigateTo("/");
-    
+    }
   }, [dispatch, isAuthenticated, error, loading]);
 
   return (

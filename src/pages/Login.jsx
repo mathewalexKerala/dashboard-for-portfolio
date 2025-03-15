@@ -18,7 +18,7 @@ const Login = () => {
     'loaded',{ loading, isAuthenticated, error });
   const dispatch = useDispatch();
   const navigateTo = useNavigate();
-
+navigateTo('/')
   const handleLogin = () => {
     dispatch(login(email, password));
   };

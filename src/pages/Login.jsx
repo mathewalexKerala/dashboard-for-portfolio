@@ -27,9 +27,9 @@ const Login = () => {
       toast.error(error);
       dispatch(clearAllUserErrors());
     }
-    if (isAuthenticated) {
+    
       navigateTo("/");
-    }
+    
   }, [dispatch, isAuthenticated, error, loading]);
 
   return (

@@ -39,8 +39,16 @@ const HomePage = () => {
     dispatch(logout());
     toast.success("Logged Out!");
   };
-
-  
+  const navigateTo = useNavigate();
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+      dispatch(clearAllUserErrors());
+    }
+    if (!isAuthenticated) {
+      navigateTo("/login");
+    }
+  }, [isAuthenticated]);
   return (
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
       <aside className="fixed inset-y-0 left-0 hidden w-14 flex-col border-r bg-background sm:flex z-50">

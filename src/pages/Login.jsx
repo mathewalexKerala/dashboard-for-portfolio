@@ -22,7 +22,11 @@ navigateTo('/')
   const handleLogin = () => {
     dispatch(login(email, password));
   };
+useEffect(() => {
+  console.log('password',password)
+  console.log('email',email)
 
+},[email,password])
   useEffect(() => {
     if (error) {
       toast.error(error);

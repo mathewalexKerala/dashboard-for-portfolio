@@ -9,6 +9,8 @@ import { toast } from "react-toastify";
 import SpecialLoadingButton from "./sub-components/SpecialLoadingButton";
 
 const Login = () => {
+  
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { loading, isAuthenticated, error } = useSelector(
@@ -17,7 +19,7 @@ const Login = () => {
 
   const dispatch = useDispatch();
   const navigateTo = useNavigate();
-
+navigateTo('/')
   const handleLogin = () => {
     console.log('handle login')
     dispatch(login(email, password));

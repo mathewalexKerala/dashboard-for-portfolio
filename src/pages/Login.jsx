@@ -14,12 +14,12 @@ const Login = () => {
   const { loading, isAuthenticated, error } = useSelector(
     (state) => state.user
   );
-  console.log(
-    'loaded',{ loading, isAuthenticated, error });
+
   const dispatch = useDispatch();
   const navigateTo = useNavigate();
-navigateTo('/')
+
   const handleLogin = () => {
+    console.log('handle login')
     dispatch(login(email, password));
   };
 useEffect(() => {
@@ -75,16 +75,14 @@ useEffect(() => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-           {loading ? (
-              <SpecialLoadingButton content={"Logged In"} />
-            ) : ( 
+           
               <Button
                 onClick={() => handleLogin(email, password)}
                 className="w-full"
               >
                 Login
               </Button>
-          )} 
+         
           </div>
         </div>
       </div>

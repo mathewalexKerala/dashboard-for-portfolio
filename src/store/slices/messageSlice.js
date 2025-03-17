@@ -57,7 +57,7 @@ export const getAllMessages = () => async (dispatch) => {
   dispatch(messageSlice.actions.getAllMessagesRequest());
   try {
     const response = await axios.get(
-      "https://backend-for-portfolio-jet.vercel.app/api/v1/message/getall",
+      "https://backend-for-portfolio-peach.vercel.app/api/v1/message/getall",
       { withCredentials: true }
     );
     dispatch(
@@ -75,7 +75,7 @@ export const deleteMessage = (id) => async (dispatch) => {
   dispatch(messageSlice.actions.deleteMessageRequest());
   try {
     const response = await axios.delete(
-      `https://backend-for-portfolio-jet.vercel.app/api/v1/message/delete/${id}`,
+      `https://backend-for-portfolio-peach.vercel.app/api/v1/message/delete/${id}`,
       {
         withCredentials: true,
       }
